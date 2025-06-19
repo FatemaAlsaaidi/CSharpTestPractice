@@ -176,6 +176,7 @@
             Console.WriteLine("1. PrintNumbers");
             Console.WriteLine("2. PrintEvenNumbers");
             Console.WriteLine("3. AcceptPassword");
+            Console.WriteLine("4. SumNumbers");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -187,6 +188,9 @@
                     break;
                 case "3":
                     AcceptPassword();
+                    break;
+                case "4":
+                    SumNumbers();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -231,6 +235,17 @@
                 password = Console.ReadLine();
             } while (password != "admin");
             Console.WriteLine("Successfully password input!");
+        }
+
+        // Sum numbers from 1 to 100 using a loop.
+        public static void SumNumbers()
+        {
+            int sum = 0;
+            for (int i = 1; i <= 100; i++)
+            {
+                sum += i; // Add each number to the sum (sum = sum + i)
+            }
+            Console.WriteLine($"The sum of numbers from 1 to 100 is: {sum}");
         }
 
     }
