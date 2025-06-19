@@ -7,6 +7,7 @@
             Console.WriteLine("Welcome to C# Test Practice!");
             Console.WriteLine("Choose a section to test:");
             Console.WriteLine("1. Functions");
+            Console.WriteLine("2. Loops");
 
             string choice = Console.ReadLine();
 
@@ -14,6 +15,9 @@
             {
                 case "1":
                     Functions();
+                    break;
+                case "2":
+                    Loops();
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Exiting.");
@@ -171,6 +175,7 @@
             Console.WriteLine("Choose a loop to test:");
             Console.WriteLine("1. PrintNumbers");
             Console.WriteLine("2. PrintEvenNumbers");
+            Console.WriteLine("3. AcceptPassword");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -179,6 +184,9 @@
                     break;
                 case "2":
                     PrintEvenNumbers();
+                    break;
+                case "3":
+                    AcceptPassword();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -211,6 +219,18 @@
                 i += 2; // Move to the next even number
                 */
             }
+        }
+
+        // Create a do-while loop that accepts password input until 'admin' is entered.
+        public static void AcceptPassword()
+        {
+            string password;
+            do
+            {
+                Console.WriteLine("Enter the password:");
+                password = Console.ReadLine();
+            } while (password != "admin");
+            Console.WriteLine("Successfully password input!");
         }
 
     }
