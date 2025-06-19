@@ -4,7 +4,28 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Welcome to C# Test Practice!");
+            Console.WriteLine("Choose a section to test:");
+            Console.WriteLine("1. Functions");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    Functions();
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice. Exiting.");
+                    break;
+            }
+
+        }
+
+        //==============  Functions ========================
+        public static void Functions()
+        {
+            Console.WriteLine("Hello,In Functions Section!");
             Console.WriteLine("Enter the functions you want to test:");
             Console.WriteLine("1. AddTwoNumbers");
             Console.WriteLine("2. IsEven");
@@ -54,8 +75,6 @@
                     break;
             }
         }
-
-        //==============  Functions ========================
         //  Create a function named AddTwoNumbers that takes two integers and returns their sum.
         public static int AddTwoNumbers(int a, int b)
         {
@@ -142,5 +161,36 @@
 
             */
         }
+
+        //============== Loops ========================
+
+        public static void Loops()
+        {
+            Console.WriteLine("Hello,In Loops Section!");
+            // Add loop-related methods here
+            Console.WriteLine("Choose a loop to test:");
+            Console.WriteLine("1. PrintNumbers");
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    PrintNumbers();
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+            }
+
+        }
+        // Use a for loop to print numbers 1 to 10
+        public static void PrintNumbers()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
     }
+
 }
