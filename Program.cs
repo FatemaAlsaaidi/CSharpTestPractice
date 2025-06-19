@@ -9,6 +9,7 @@
             Console.WriteLine("1. Functions");
             Console.WriteLine("2. Loops");
             Console.WriteLine("3. Arrays");
+            Console.WriteLine("4. Exceptions");
 
             string choice = Console.ReadLine();
 
@@ -22,6 +23,9 @@
                     break;
                 case "3":
                     Arrays();
+                    break;
+                case "4":
+                    Exceptions();
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Exiting.");
@@ -374,6 +378,69 @@
             }
             return count; // Return the total count of odd numbers
         }
+
+
+        // ============== Exceptions ========================
+        public static void Exceptions()
+        {
+            Console.WriteLine("Hello,In Exceptions Section!");
+            // Add exception-related methods here
+            Console.WriteLine("Choose an exception operation to test:");
+            Console.WriteLine("1. Catch format exception");
+            Console.WriteLine("2. Catch divide by zero exception");
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    FormatExceptionExample();
+                    break;
+                case "2":
+                    DivideByZeroExceptionExample();
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+            }
+        }
+
+        //  Catch format exception when parsing an int.
+        public static void FormatExceptionExample()
+        {
+            try
+            {
+                Console.WriteLine("Enter a number to parse:");
+                int number = int.Parse(Console.ReadLine()); // This may throw a FormatException
+                Console.WriteLine($"Parsed number: {number}");
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Error: Invalid input format. Please enter a valid integer.");
+                Console.WriteLine($"Exception message: {ex.Message}");
+            }
+        }
+
+        //  Another Catch format exception when parsing an int.
+        public static void DivideByZeroExceptionExample()
+        {
+            try
+            {
+                Console.WriteLine("Enter a number to divide by zero:");
+                int number = int.Parse(Console.ReadLine());
+                int result = number / 0; // This will cause a DivideByZeroException
+                Console.WriteLine($"Result: {result}");
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine("Error: Division by zero is not allowed.");
+                Console.WriteLine($"Exception message: {ex.Message}");
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Error: Invalid input format. Please enter a valid integer.");
+                Console.WriteLine($"Exception message: {ex.Message}");
+            }
+        }
+        
 
 
     }
