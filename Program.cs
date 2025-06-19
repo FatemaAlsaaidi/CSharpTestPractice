@@ -177,6 +177,7 @@
             Console.WriteLine("2. PrintEvenNumbers");
             Console.WriteLine("3. AcceptPassword");
             Console.WriteLine("4. SumNumbers");
+            Console.WriteLine("5. PrintNames (using foreach)");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -191,6 +192,12 @@
                     break;
                 case "4":
                     SumNumbers();
+                    break;
+                case "5":
+                    Console.WriteLine("Enter names separated by commas:");
+                    string input = Console.ReadLine();
+                    string[] names = input.Split(',');
+                    PrintNames(names);
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -246,6 +253,15 @@
                 sum += i; // Add each number to the sum (sum = sum + i)
             }
             Console.WriteLine($"The sum of numbers from 1 to 100 is: {sum}");
+        }
+
+        // Print names in a string array using foreach.
+        public static void PrintNames(string[] names)
+        {
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
         }
 
     }
