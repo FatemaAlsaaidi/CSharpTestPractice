@@ -277,6 +277,7 @@
             Console.WriteLine("1. First and Last Elements");
             Console.WriteLine("2. Max Value in Array");
             Console.WriteLine("3. Store and Print Names in Reverse");
+            Console.WriteLine("4. Sum Array Elements");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -289,6 +290,10 @@
                     break;
                 case "3":
                     StoreAndPrintNamesInReverse();
+                    break;
+                case "4":
+                    int sum = SumArrayElements();
+                    Console.WriteLine($"The sum of the array elements is: {sum}");
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -333,6 +338,18 @@
             {
                 Console.WriteLine(names[i]); // Print names in reverse order
             }
+        }
+
+        //  Sum all elements in array {3,6,9,12}.
+        public static int SumArrayElements()
+        {
+            int[] numbers = { 3, 6, 9, 12 };
+            int sum = 0; // Initialize sum to 0
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                sum += numbers[i]; // Add each element to the sum
+            }
+            return sum; // Return the total sum
         }
 
 
