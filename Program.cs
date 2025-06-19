@@ -170,11 +170,15 @@
             // Add loop-related methods here
             Console.WriteLine("Choose a loop to test:");
             Console.WriteLine("1. PrintNumbers");
+            Console.WriteLine("2. PrintEvenNumbers");
             string choice = Console.ReadLine();
             switch (choice)
             {
                 case "1":
                     PrintNumbers();
+                    break;
+                case "2":
+                    PrintEvenNumbers();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -188,6 +192,24 @@
             for (int i = 1; i <= 10; i++)
             {
                 Console.WriteLine(i);
+            }
+        }
+
+        //  Use a while loop to print even numbers from 2 to 20.
+        public static void PrintEvenNumbers()
+        {
+            int i = 2; // Start from the first even number
+            while (i <= 20) // Continue until 20
+            {
+                if (i % 2 == 0) // Check if the number is even
+                {
+                    Console.WriteLine(i); // Print the current even number
+                }
+
+                /*OR
+                Console.WriteLine(i); // Print the current even number
+                i += 2; // Move to the next even number
+                */
             }
         }
 
