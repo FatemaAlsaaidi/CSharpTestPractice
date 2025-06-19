@@ -388,6 +388,7 @@
             Console.WriteLine("Choose an exception operation to test:");
             Console.WriteLine("1. Catch format exception");
             Console.WriteLine("2. Catch divide by zero exception");
+            Console.WriteLine("3. Check if file exists before reading");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -396,6 +397,9 @@
                     break;
                 case "2":
                     DivideByZeroExceptionExample();
+                    break;
+                case "3":
+                    FileExistsExample();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -440,7 +444,24 @@
                 Console.WriteLine($"Exception message: {ex.Message}");
             }
         }
-        
+
+        //  Use try-catch to check if a file exists before reading
+        public static void FileExistsExample()
+        {
+            try
+            {
+                string filePath = "example.txt"; // Specify the file path
+                string content = System.IO.File.ReadAllText(filePath); // Read the file content
+                Console.WriteLine("File content:");
+                Console.WriteLine(content);
+                
+            }
+            catch (System.IO.FileNotFoundException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        }
+
 
 
     }
