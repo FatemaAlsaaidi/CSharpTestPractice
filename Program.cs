@@ -27,6 +27,12 @@
                     string name = Console.ReadLine();
                     GreetUser(name);
                     break;
+                case "4":
+                    Console.WriteLine("Enter two doubles to find the maximum:");
+                    double x = double.Parse(Console.ReadLine());
+                    double y = double.Parse(Console.ReadLine());
+                    Console.WriteLine($"The maximum value is: {Max(x, y)}");
+                    break;
 
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -81,6 +87,19 @@
             Console.WriteLine($"Welcome, {name}!");
         }
 
+        //  Define a method Max that takes two doubles and returns the greater one.
+        public static double Max(double a, double b)
+        {
+            // Check if the first number is greater than the second
+            if (a > b)
+            {
+                return a; // Return the first number if it's greater
+            }
+            else
+            {
+                return b; // Otherwise, return the second number
+            }
 
-    }
+
+        }
 }
