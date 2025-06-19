@@ -419,7 +419,7 @@
             }
         }
 
-        //  Another Catch format exception when parsing an int.
+        //  Handle divide-by-zero exception with try-catch.
         public static void DivideByZeroExceptionExample()
         {
             try
