@@ -275,11 +275,16 @@
             // Add array-related methods here
             Console.WriteLine("Choose an array operation to test:");
             Console.WriteLine("1. First and Last Elements");
+            Console.WriteLine("2. Max Value in Array");
             string choice = Console.ReadLine();
             switch (choice)
             {
                 case "1":
                     PrintFirstVsLastElements();
+                    break;
+                case "2":
+                    int maxValue = MaxValue();
+                    Console.WriteLine($"The maximum value in the array is: {maxValue}");
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -295,6 +300,22 @@
             Console.WriteLine($"Last element: {numbers[numbers.Length - 1]}");
         }
 
+        //  Find the max value in an int array.
+        public static int MaxValue()
+        {
+            int[] numbers = { 5, 10, 15, 20, 25 };
+            int max = numbers[0]; // Assume the first element is the maximum
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (numbers[i] > max) // Compare with each element
+                {
+                    max = numbers[i]; // Update max if a larger number is found
+                }
+            }
+            return max; // Return the maximum value found
+        }
+
+       
     }
 
 }
