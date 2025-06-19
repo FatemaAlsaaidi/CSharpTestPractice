@@ -8,6 +8,9 @@
             Console.WriteLine("Enter the functions you want to test:");
             Console.WriteLine("1. AddTwoNumbers");
             Console.WriteLine("2. IsEven");
+            Console.WriteLine("3. GreetUser");
+            Console.WriteLine("4. Max");
+            Console.WriteLine("5. Factorial");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -33,12 +36,24 @@
                     double y = double.Parse(Console.ReadLine());
                     Console.WriteLine($"The maximum value is: {Max(x, y)}");
                     break;
+                case "5":
+                    Console.WriteLine("Enter a number to calculate its factorial:");
+                    int n = int.Parse(Console.ReadLine());
+                    try
+                    {
+                        Console.WriteLine($"The factorial of {n} is: {Factorial(n)}");
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    break;
 
                 default:
                     Console.WriteLine("Invalid choice.");
                     break;
             }
-            }
+        }
 
         //==============  Functions ========================
         //  Create a function named AddTwoNumbers that takes two integers and returns their sum.
@@ -102,4 +117,30 @@
 
 
         }
+
+        // Create a recursive method to calculate factorial of a number.
+        public static int Factorial(int n)
+        {
+            if (n < 0)
+            {
+                throw new ArgumentException("Number must be non-negative.");
+            }
+            if (n == 0 || n == 1)
+            {
+                return 1; // Base case: factorial of 0 or 1 is 1
+            }
+            else
+            {
+                return n * Factorial(n - 1); // Recursive case
+            }
+            /* 
+            For example, to calculate Factorial(5):
+            It returns 5 * Factorial(4)
+            Factorial(4) returns 4 * Factorial(3)
+            Factorial(3) returns 3 * Factorial(2)
+            Factorial(2) returns 2 * Factorial(1)
+
+            */
+        }
+    }
 }
