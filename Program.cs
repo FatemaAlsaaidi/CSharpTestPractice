@@ -22,6 +22,12 @@
                     int number = int.Parse(Console.ReadLine());
                     Console.WriteLine($"Is the number even? {IsEven(number)}");
                     break;
+                case "3":
+                    Console.WriteLine("Enter your name:");
+                    string name = Console.ReadLine();
+                    GreetUser(name);
+                    break;
+
                 default:
                     Console.WriteLine("Invalid choice.");
                     break;
@@ -63,7 +69,18 @@
 
             }
         }
+        //  Create a method GreetUser(string name) that prints 'Welcome, <name>!
+        public static void GreetUser(string name)
+        {
+            // Validate the input name
+            if (string.IsNullOrEmpty(name))
+            {
+                // Throw an exception if the name is null or empty
+                throw new ArgumentException("Name cannot be null or empty.");
+            }
+            Console.WriteLine($"Welcome, {name}!");
+        }
 
-        
+
     }
 }
