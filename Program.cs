@@ -389,6 +389,7 @@
             Console.WriteLine("1. Catch format exception");
             Console.WriteLine("2. Catch divide by zero exception");
             Console.WriteLine("3. Check if file exists before reading");
+            Console.WriteLine("4. Finally block example");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -400,6 +401,9 @@
                     break;
                 case "3":
                     FileExistsExample();
+                    break;
+                case "4":
+                    FinallyBlockExample();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -459,6 +463,24 @@
             catch (System.IO.FileNotFoundException ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
+            }
+        }
+
+        // Demonstrate finally block that always prints 'Finished'.
+        public static void FinallyBlockExample()
+        {
+            try
+            {
+                Console.WriteLine("Executing try block...");
+                // Simulate some operation that may throw an exception
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Caught an exception: {ex.Message}");
+            }
+            finally
+            {
+                Console.WriteLine("Finished"); // This will always execute
             }
         }
 
