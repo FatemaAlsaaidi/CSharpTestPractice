@@ -8,6 +8,7 @@
             Console.WriteLine("Choose a section to test:");
             Console.WriteLine("1. Functions");
             Console.WriteLine("2. Loops");
+            Console.WriteLine("3. Arrays");
 
             string choice = Console.ReadLine();
 
@@ -18,6 +19,9 @@
                     break;
                 case "2":
                     Loops();
+                    break;
+                case "3":
+                    Arrays();
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Exiting.");
@@ -262,6 +266,33 @@
             {
                 Console.WriteLine(name);
             }
+        }
+
+        // ============== Arrays ========================
+        public static void Arrays()
+        {
+            Console.WriteLine("Hello,In Arrays Section!");
+            // Add array-related methods here
+            Console.WriteLine("Choose an array operation to test:");
+            Console.WriteLine("1. First and Last Elements");
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    PrintFirstVsLastElements();
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+            }
+        }
+
+        // Create an array {5,10,15,20} and print first and last elements.
+        public static void PrintFirstVsLastElements()
+        {
+            int[] numbers = { 5, 10, 15, 20 };
+            Console.WriteLine($"First element: {numbers[0]}");
+            Console.WriteLine($"Last element: {numbers[numbers.Length - 1]}");
         }
 
     }
