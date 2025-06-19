@@ -484,6 +484,8 @@
             }
         }
 
+        //  Wrap user input in try-catch to validate number entry.
+
 
 
     }
