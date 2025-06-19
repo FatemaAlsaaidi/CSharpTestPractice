@@ -278,6 +278,7 @@
             Console.WriteLine("2. Max Value in Array");
             Console.WriteLine("3. Store and Print Names in Reverse");
             Console.WriteLine("4. Sum Array Elements");
+            Console.WriteLine("5. Count Odd Numbers in Array");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -294,6 +295,13 @@
                 case "4":
                     int sum = SumArrayElements();
                     Console.WriteLine($"The sum of the array elements is: {sum}");
+                    break;
+                case "5":
+                    Console.WriteLine("Enter numbers separated by spaces:");
+                    string input = Console.ReadLine();
+                    int[] userArray = Array.ConvertAll(input.Split(' '), int.Parse);
+                    int oddCount = CountOddNumbers(userArray);
+                    Console.WriteLine($"The count of odd numbers in the array is: {oddCount}");
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -350,6 +358,21 @@
                 sum += numbers[i]; // Add each element to the sum
             }
             return sum; // Return the total sum
+        }
+
+        // Count how many odd numbers are in a user-defined array.
+
+        public static int CountOddNumbers(int[] array)
+        {
+            int count = 0; // Initialize count to 0
+            foreach (int number in array) // Iterate through each number in the array
+            {
+                if (number % 2 != 0) // Check if the number is odd
+                {
+                    count++; // Increment count for each odd number found
+                }
+            }
+            return count; // Return the total count of odd numbers
         }
 
 
