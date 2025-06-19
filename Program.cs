@@ -276,6 +276,7 @@
             Console.WriteLine("Choose an array operation to test:");
             Console.WriteLine("1. First and Last Elements");
             Console.WriteLine("2. Max Value in Array");
+            Console.WriteLine("3. Store and Print Names in Reverse");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -285,6 +286,9 @@
                 case "2":
                     int maxValue = MaxValue();
                     Console.WriteLine($"The maximum value in the array is: {maxValue}");
+                    break;
+                case "3":
+                    StoreAndPrintNamesInReverse();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -315,7 +319,23 @@
             return max; // Return the maximum value found
         }
 
-       
+        //  Store 3 names from user input in an array, print in reverse.
+        public static void StoreAndPrintNamesInReverse()
+        {
+            string[] names = new string[3]; // Create an array to hold 3 names
+            for (int i = 0; i < names.Length; i++)
+            {
+                Console.WriteLine($"Enter name {i + 1}:");
+                names[i] = Console.ReadLine(); // Store user input in the array
+            }
+            Console.WriteLine("Names in reverse order:");
+            for (int i = names.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine(names[i]); // Print names in reverse order
+            }
+        }
+
+
     }
 
 }
