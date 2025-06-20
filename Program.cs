@@ -516,11 +516,15 @@
             // Add data type-related methods here
             Console.WriteLine("Choose a data type operation to test:");
             Console.WriteLine("1. Declare and Print Data Types");
+            Console.WriteLine("2. Ask for Age");
             string choice = Console.ReadLine();
             switch (choice)
             {
                 case "1":
                     PrintDataTypes();
+                    break;
+                case "2":
+                    AskForAge();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -538,6 +542,13 @@
             Console.WriteLine($"Name: {name}");
             Console.WriteLine($"Age: {age}");
             Console.WriteLine($"Height: {height} feet");
+        }
+        //  Ask for age and print 'You are X years old'.
+        public static void AskForAge()
+        {
+            Console.WriteLine("Please enter your age:");
+            int age = int.Parse(Console.ReadLine()); // Read user input and convert to integer
+            Console.WriteLine($"You are {age} years old."); // Print the age
         }
 
 
