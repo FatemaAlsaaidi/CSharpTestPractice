@@ -10,6 +10,7 @@
             Console.WriteLine("2. Loops");
             Console.WriteLine("3. Arrays");
             Console.WriteLine("4. Exceptions");
+            Console.WriteLine("5. Data Types"); 
 
             string choice = Console.ReadLine();
 
@@ -26,6 +27,9 @@
                     break;
                 case "4":
                     Exceptions();
+                    break;
+                case "5":
+                    DataTypes();
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Exiting.");
@@ -503,6 +507,39 @@
                 Console.WriteLine($"Exception message: {ex.Message}");
             }
         }
+
+        
+        // ================= Data Types ========================
+        public static void DataTypes()
+        {
+            Console.WriteLine("Hello,In Data Types Section!");
+            // Add data type-related methods here
+            Console.WriteLine("Choose a data type operation to test:");
+            Console.WriteLine("1. Declare and Print Data Types");
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    PrintDataTypes();
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+            }
+        }
+
+        //  Declare and print variables: name (string), age (int), height (double).
+        public static void PrintDataTypes()
+        {
+            string name = "John Doe"; // Declare a string variable
+            int age = 30; // Declare an integer variable
+            double height = 5.9; // Declare a double variable
+            // Print the values of the variables
+            Console.WriteLine($"Name: {name}");
+            Console.WriteLine($"Age: {age}");
+            Console.WriteLine($"Height: {height} feet");
+        }
+
 
 
 
