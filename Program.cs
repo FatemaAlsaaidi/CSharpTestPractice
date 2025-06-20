@@ -12,6 +12,7 @@
             Console.WriteLine("4. Exceptions");
             Console.WriteLine("5. Data Types");
             Console.WriteLine("6. Operators");
+            Console.WriteLine("7. Access Modifiers");
 
             string choice = Console.ReadLine();
 
@@ -34,6 +35,9 @@
                     break;
                 case "6":
                     Operators();
+                    break;
+                case "7":
+                    AccessModifiers();
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Exiting.");
@@ -470,7 +474,7 @@
                 string content = System.IO.File.ReadAllText(filePath); // Read the file content
                 Console.WriteLine("File content:");
                 Console.WriteLine(content);
-                
+
             }
             catch (System.IO.FileNotFoundException ex)
             {
@@ -512,7 +516,7 @@
             }
         }
 
-        
+
         // ================= Data Types ========================
         public static void DataTypes()
         {
@@ -793,6 +797,32 @@
             Console.WriteLine($"Right Shift a by 1: {a >> 1}"); // Right shift
         }
 
+        // ===================== Access Modifiers ========================
+        public static void AccessModifiers()
+        {
+            Console.WriteLine("Access Modifiers Section");
+    
+        }
+
+        // Create a class Person with private field name, public methods SetName and GetName.
+        public class Person
+        {
+            private string name; // Private field
+                                 // Public method to set the name
+            public void SetName(string value)
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("Name cannot be null or empty.");
+                }
+                name = value;
+            }
+            // Public method to get the name
+            public string GetName()
+            {
+                return name;
+            }
+        }
 
 
     }
