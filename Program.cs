@@ -390,6 +390,7 @@
             Console.WriteLine("2. Catch divide by zero exception");
             Console.WriteLine("3. Check if file exists before reading");
             Console.WriteLine("4. Finally block example");
+            Console.WriteLine("5. Validate number input with try-catch");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -404,6 +405,9 @@
                     break;
                 case "4":
                     FinallyBlockExample();
+                    break;
+                case "5":
+                    ValidateNumberInput();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -485,6 +489,20 @@
         }
 
         //  Wrap user input in try-catch to validate number entry.
+        public static void ValidateNumberInput()
+        {
+            try
+            {
+                Console.WriteLine("Enter a number:");
+                int number = int.Parse(Console.ReadLine()); // This may throw a FormatException
+                Console.WriteLine($"You entered: {number}");
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Error: Invalid input format. Please enter a valid integer.");
+                Console.WriteLine($"Exception message: {ex.Message}");
+            }
+        }
 
 
 
