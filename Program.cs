@@ -49,6 +49,11 @@
             DerivedClass obj = new DerivedClass();
             obj.CallProtectedMethod(); // Output: Protected method in BaseClass called.
 
+
+            ScopeExample obj = new ScopeExample();
+            obj.ShowScope();
+            obj.AnotherMethod();
+
         }
 
         //==============  Functions ========================
@@ -913,6 +918,37 @@
         //    {
         //        DerivedClass obj = new DerivedClass();
         //        obj.CallProtectedMethod(); // Output: Protected method in BaseClass called.
+        //    }
+        //}
+
+        // Demonstrate scope of a local variable inside a method.
+
+       //using System;
+
+        public class ScopeExample
+        {
+            public void ShowScope()
+            {
+                int localVariable = 10; // Local variable declared inside the method
+
+                Console.WriteLine("Inside ShowScope method:");
+                Console.WriteLine("localVariable = " + localVariable);
+            }
+
+            public void AnotherMethod()
+            {
+                // Uncommenting the below line would cause a compile-time error:
+                // Console.WriteLine(localVariable); // Error: localVariable does not exist in this context
+            }
+        }
+
+        //public class Program
+        //{
+        //    public static void Main(string[] args)
+        //    {
+        //        ScopeExample obj = new ScopeExample();
+        //        obj.ShowScope();
+        //        obj.AnotherMethod();
         //    }
         //}
 
