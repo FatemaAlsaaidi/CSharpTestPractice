@@ -863,6 +863,22 @@
             }
         }
 
+        // Track method calls using static field.
+        public class MethodTracker
+        {
+            private static int methodCallCount = 0; // Static field to track method calls
+            // Public method to increment the call count
+            public void IncrementCallCount()
+            {
+                methodCallCount++; // Increment the static field
+            }
+            // Public method to get the current call count
+            public int GetCallCount()
+            {
+                return methodCallCount; // Return the current call count
+            }
+        }
+
     }
 
 }
