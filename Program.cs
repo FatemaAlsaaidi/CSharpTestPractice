@@ -518,6 +518,7 @@
             Console.WriteLine("1. Declare and Print Data Types");
             Console.WriteLine("2. Ask for Age");
             Console.WriteLine("3. Calculate Circle Area");
+            Console.WriteLine("4. Add Two Float Numbers");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -539,6 +540,9 @@
                     {
                         Console.WriteLine(ex.Message);
                     }
+                    break;
+                case "4":
+                    AddTwoFloatNumbers();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -564,7 +568,7 @@
             int age = int.Parse(Console.ReadLine()); // Read user input and convert to integer
             Console.WriteLine($"You are {age} years old."); // Print the age
         }
-        //Calculate area of a circle using const double Pi.
+        // Calculate area of a circle using const double Pi.
         public const double Pi = 3.14159; // Define a constant for Pi
         public static double CalculateCircleArea(double radius)
         {
@@ -573,6 +577,16 @@
                 throw new ArgumentException("Radius must be non-negative.");
             }
             return Pi * radius * radius; // Area = π * r^2
+        }
+
+        // Add two float numbers and print result formatted to 2 decimals.
+        public static void AddTwoFloatNumbers()
+        {
+            Console.WriteLine("Enter two float numbers to add:");
+            float num1 = float.Parse(Console.ReadLine());
+            float num2 = float.Parse(Console.ReadLine());
+            float sum = num1 + num2; // Calculate the sum
+            Console.WriteLine($"The sum is: {sum:F2}"); // Print the result formatted to 2 decimal places
         }
 
 
