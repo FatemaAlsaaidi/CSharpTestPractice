@@ -1,7 +1,9 @@
 ﻿namespace CSharpTestPractice
 {
+    using System;
     internal class Program
     {
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to C# Test Practice!");
@@ -43,6 +45,9 @@
                     Console.WriteLine("Invalid choice. Exiting.");
                     break;
             }
+
+            DerivedClass obj = new DerivedClass();
+            obj.CallProtectedMethod(); // Output: Protected method in BaseClass called.
 
         }
 
@@ -879,6 +884,41 @@
             }
         }
 
-    }
+        //  Use protected method in base class and call from derived class.
+       
+        //using System;
+
+        public class BaseClass
+        {
+                // Protected method that can be accessed by derived classes
+                protected void ProtectedMethod()
+                {
+                    Console.WriteLine("Protected method in BaseClass called.");
+                }
+        }
+
+        // Derived class that inherits from BaseClass
+        public class DerivedClass : BaseClass
+        {
+            public void CallProtectedMethod()
+            {
+                // Call the protected method from the base class
+                ProtectedMethod();
+            }
+        }
+
+        //public class Program
+        //{
+        //    public static void Main(string[] args)
+        //    {
+        //        DerivedClass obj = new DerivedClass();
+        //        obj.CallProtectedMethod(); // Output: Protected method in BaseClass called.
+        //    }
+        //}
+
+
+
+
+}
 
 }
