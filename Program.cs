@@ -10,7 +10,8 @@
             Console.WriteLine("2. Loops");
             Console.WriteLine("3. Arrays");
             Console.WriteLine("4. Exceptions");
-            Console.WriteLine("5. Data Types"); 
+            Console.WriteLine("5. Data Types");
+            Console.WriteLine("6. Operators");
 
             string choice = Console.ReadLine();
 
@@ -30,6 +31,9 @@
                     break;
                 case "5":
                     DataTypes();
+                    break;
+                case "6":
+                    Operators();
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Exiting.");
@@ -519,6 +523,7 @@
             Console.WriteLine("2. Ask for Age");
             Console.WriteLine("3. Calculate Circle Area");
             Console.WriteLine("4. Add Two Float Numbers");
+            Console.WriteLine("5. Use Var with String");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -543,6 +548,9 @@
                     break;
                 case "4":
                     AddTwoFloatNumbers();
+                    break;
+                case "5":
+                    UseVarWithString();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -589,6 +597,201 @@
             Console.WriteLine($"The sum is: {sum:F2}"); // Print the result formatted to 2 decimal places
         }
 
+        // Use var with string value and print its type
+        public static void UseVarWithString()
+        {
+            var message = "Hello, World!"; // Declare a variable using var
+            Console.WriteLine($"Message: {message}"); // Print the message
+            Console.WriteLine($"Type of message: {message.GetType()}"); // Print the type of the variable
+        }
+
+        // ================ Operators ========================
+        public static void Operators()
+        {
+            Console.WriteLine("Hello,In Operators Section!");
+            // Add operator-related methods here
+            Console.WriteLine("Choose an operator operation to test:");
+            Console.WriteLine("1. Arithmetic Operators");
+            Console.WriteLine("2. Comparison Operators");
+            Console.WriteLine("3. Ternary Operator");
+            Console.WriteLine("4. Logical Operators");
+            Console.WriteLine("5. Incremented Value");
+            Console.WriteLine("6. Assignment Operators");
+            Console.WriteLine("7. Compare Strings using == operator");
+            Console.WriteLine("8. Bitwise Operators");
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    ArithmeticOperators();
+                    break;
+                case "2":
+                    ComparisonOperators();
+                    break;
+                case "3":
+                    TernaryOperator();
+                    break;
+                case "4":
+                    LogicalOperators();
+                    break;
+                case "5":
+                    IncrementedValue();
+                    break;
+                case "6":
+                    AssignmentOperators();
+                    break;
+                case "7":
+                    CompareStrings();
+                    break;
+                case "8":
+                    BitwiseOperators();
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+            }
+        }
+
+        //  Input two numbers, show sum, difference, product, and quotient.
+        public static void ArithmeticOperators()
+        {
+            Console.WriteLine("Enter two numbers:");
+            double num1 = double.Parse(Console.ReadLine());
+            double num2 = double.Parse(Console.ReadLine());
+            Console.WriteLine($"Sum: {num1 + num2}");
+            Console.WriteLine($"Difference: {num1 - num2}");
+            Console.WriteLine($"Product: {num1 * num2}");
+            if (num2 != 0)
+            {
+                Console.WriteLine($"Quotient: {num1 / num2}");
+            }
+            else
+            {
+                Console.WriteLine("Cannot divide by zero.");
+            }
+        }
+
+        //  Check if number is >10 and even using logical AND.
+        public static void ComparisonOperators()
+        {
+            Console.WriteLine("Enter a number to check if it's greater than 10 and even:");
+            int number = int.Parse(Console.ReadLine());
+            if (number > 10 && number % 2 == 0)
+            {
+                Console.WriteLine("The number is greater than 10 and even.");
+            }
+            else
+            {
+                Console.WriteLine("The number is either not greater than 10 or not even.");
+            }
+        }
+
+        // Use ternary operator to check if age >= 18 (Adult/Minor).
+        public static void TernaryOperator()
+        {
+            Console.WriteLine("Enter your age:");
+            int age = int.Parse(Console.ReadLine());
+            string status = (age >= 18) ? "Adult" : "Minor"; // Ternary operator to determine status
+            Console.WriteLine($"You are an {status}.");
+        }
+
+        // logical operators example
+        public static void LogicalOperators()
+        {
+            Console.WriteLine("Enter two boolean values (true/false):");
+            bool a = bool.Parse(Console.ReadLine());
+            bool b = bool.Parse(Console.ReadLine());
+            Console.WriteLine($"AND: {a && b}"); // Logical AND
+            Console.WriteLine($"OR: {a || b}"); // Logical OR
+            Console.WriteLine($"NOT a: {!a}"); // Logical NOT
+            Console.WriteLine(
+                $"XOR: {a ^ b}"); // Logical XOR
+            Console.WriteLine(
+                $"NAND: {!(a && b)}"); // Logical NAND
+            Console.WriteLine(
+                $"NOR: {!(a || b)}"); // Logical NOR
+            Console.WriteLine(
+                $"XNOR: {!(a ^ b)}"); // Logical XNOR
+            Console.WriteLine(
+                $"Conditional AND: {(a ? b : false)}"); // Conditional AND
+            Console.WriteLine(
+                $"Conditional OR: {(a ? true : b)}"); // Conditional OR
+            Console.WriteLine(
+                $"Short-circuit AND: {(a && b)}"); // Short-circuit AND
+            Console.WriteLine(
+                $"Short-circuit OR: {(a || b)}"); // Short-circuit OR
+            Console.WriteLine(
+                $"Null-coalescing: {(a ? b : true)}"); // Null-coalescing operator
+            Console.WriteLine(
+                $"Conditional null-coalescing: {(a ? b : null)}"); // Conditional null-coalescing operator
+            Console.WriteLine(
+                $"Conditional null-coalescing with assignment: {(a ? b : (b ?? true))}"); // Conditional null-coalescing with assignment
+
+        }
+
+        //  Increment x = 5 using ++ and print result.
+        public static void IncrementedValue()
+        {
+            int x = 5; // Initialize x to 5
+            Console.WriteLine($"Original value of x: {x}");
+            x++; // Increment x by 1
+            Console.WriteLine($"Value of x after incrementing: {x}"); // Print the incremented value
+        }
+
+        //  Use assignment operators to modify a variable.
+        public static void AssignmentOperators()
+        {
+            int x = 10; // Initialize x to 10
+            Console.WriteLine($"Original value of x: {x}");
+            x += 5; // Add 5 to x (equivalent to x = x + 5)
+            Console.WriteLine($"Value of x after += 5: {x}");
+            x -= 3; // Subtract 3 from x (equivalent to x = x - 3)
+            Console.WriteLine($"Value of x after -= 3: {x}");
+            x *= 2; // Multiply x by 2 (equivalent to x = x * 2)
+            Console.WriteLine($"Value of x after *= 2: {x}");
+            if (x != 0)
+            {
+                x /= 4; // Divide x by 4 (equivalent to x = x / 4)
+                Console.WriteLine($"Value of x after /= 4: {x}");
+            }
+            else
+            {
+                Console.WriteLine("Cannot divide by zero.");
+            }
+        }
+
+        // Compare two strings and check if they are equal using ==.
+        public static void CompareStrings()
+        {
+            Console.WriteLine("Enter the first string:");
+            string str1 = Console.ReadLine();
+            Console.WriteLine("Enter the second string:");
+            string str2 = Console.ReadLine();
+            if (str1 == str2)
+            {
+                Console.WriteLine("The strings are equal.");
+            }
+            else
+            {
+                Console.WriteLine("The strings are not equal.");
+            }
+        }
+
+
+
+        // Use bitwise operators to demonstrate AND, OR, XOR, NOT, left shift, and right shift.
+        public static void BitwiseOperators()
+        {
+            int a = 5; // Binary: 0101
+            int b = 3; // Binary: 0011
+            Console.WriteLine($"a = {a}, b = {b}");
+            Console.WriteLine($"Bitwise AND: {a & b}"); // Bitwise AND
+            Console.WriteLine($"Bitwise OR: {a | b}"); // Bitwise OR
+            Console.WriteLine($"Bitwise XOR: {a ^ b}"); // Bitwise XOR
+            Console.WriteLine($"Bitwise NOT a: {~a}"); // Bitwise NOT
+            Console.WriteLine($"Left Shift a by 1: {a << 1}"); // Left shift
+            Console.WriteLine($"Right Shift a by 1: {a >> 1}"); // Right shift
+        }
 
 
 
