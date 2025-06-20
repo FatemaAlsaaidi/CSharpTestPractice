@@ -824,6 +824,44 @@
             }
         }
 
+        // Use a public method that calls a private method inside the class.
+        public class Calculator
+        {
+            // Public method to add two numbers
+            public int Add(int a, int b)
+            {
+                return AddNumbers(a, b); // Call the private method
+            }
+            // Private method to perform addition
+            private int AddNumbers(int a, int b)
+            {
+                return a + b; // Return the sum of a and b
+            }
+        }
+        // Use a public method that calls a private method inside the class.
+        public class BankAccount
+        {
+            private decimal balance; // Private field to store the balance
+            // Public method to deposit money
+            public void Deposit(decimal amount)
+            {
+                if (amount <= 0)
+                {
+                    throw new ArgumentException("Deposit amount must be positive.");
+                }
+                balance += amount; // Call the private method to update the balance
+            }
+            // Public method to get the current balance
+            public decimal GetBalance()
+            {
+                return GetCurrentBalance(); // Call the private method to retrieve the balance
+            }
+            // Private method to retrieve the current balance
+            private decimal GetCurrentBalance()
+            {
+                return balance; // Return the current balance
+            }
+        }
 
     }
 
