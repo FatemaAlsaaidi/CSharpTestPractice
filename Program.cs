@@ -517,6 +517,7 @@
             Console.WriteLine("Choose a data type operation to test:");
             Console.WriteLine("1. Declare and Print Data Types");
             Console.WriteLine("2. Ask for Age");
+            Console.WriteLine("3. Calculate Circle Area");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -525,6 +526,19 @@
                     break;
                 case "2":
                     AskForAge();
+                    break;
+                case "3":
+                    Console.WriteLine("Enter the radius of the circle:");
+                    double radius = double.Parse(Console.ReadLine());
+                    try
+                    {
+                        double area = CalculateCircleArea(radius);
+                        Console.WriteLine($"The area of the circle with radius {radius} is: {area}");
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -549,6 +563,16 @@
             Console.WriteLine("Please enter your age:");
             int age = int.Parse(Console.ReadLine()); // Read user input and convert to integer
             Console.WriteLine($"You are {age} years old."); // Print the age
+        }
+        //Calculate area of a circle using const double Pi.
+        public const double Pi = 3.14159; // Define a constant for Pi
+        public static double CalculateCircleArea(double radius)
+        {
+            if (radius < 0)
+            {
+                throw new ArgumentException("Radius must be non-negative.");
+            }
+            return Pi * radius * radius; // Area = π * r^2
         }
 
 
