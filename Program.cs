@@ -965,8 +965,7 @@
             // Add input/output-related methods here
             Console.WriteLine("Choose an input/output operation to test:");
             Console.WriteLine("1. Read and Print User Input");
-            Console.WriteLine("2. Write to a File");
-            Console.WriteLine("3. Read from a File");
+            Console.WriteLine("2. Read Two Numbers AndDisplay Sum");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -974,10 +973,7 @@
                     ReadAndPrintUserInput();
                     break;
                 case "2":
-                    WriteToFile();
-                    break;
-                case "3":
-                    ReadFromFile();
+                    ReadTwoNumbersAndDisplaySum();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -993,6 +989,16 @@
             Console.WriteLine($"Hello, {name}!"); // Greet the user
         }
 
+        // Read two numbers from user and display their sum.
+        public static void ReadTwoNumbersAndDisplaySum()
+        {
+            Console.WriteLine("Enter the first number:");
+            int num1 = int.Parse(Console.ReadLine()); // Read first number
+            Console.WriteLine("Enter the second number:");
+            int num2 = int.Parse(Console.ReadLine()); // Read second number
+            int sum = num1 + num2; // Calculate the sum
+            Console.WriteLine($"The sum of {num1} and {num2} is: {sum}"); // Display the sum
+        }
 
 
     }
