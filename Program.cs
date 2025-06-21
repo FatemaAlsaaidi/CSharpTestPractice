@@ -1053,6 +1053,7 @@
             Console.WriteLine("2. Check if File Exists");
             Console.WriteLine("3. Append to Log File");
             Console.WriteLine("4. Read Notes File");
+            Console.WriteLine("5. Read Names from File");
 
             string choice = Console.ReadLine();
             switch (choice)
@@ -1068,6 +1069,9 @@
                     break;
                 case "4":
                     ReadNotesFile();
+                    break;
+                case "5":
+                    ReadNamesFromFile();
                     break;
 
                 default:
@@ -1173,6 +1177,95 @@
                 Console.WriteLine($"Error reading names file: {ex.Message}");
             }
         }
+
+        //====================== Syntax ==================
+        public static void Syntax()
+        {
+            Console.WriteLine("Hello,In Syntax Section!");
+            // Add syntax-related methods here
+            Console.WriteLine("Choose a syntax operation to test:");
+            Console.WriteLine("1. Print Hello C#");
+            Console.WriteLine("2. Declare and Print Variables");
+            Console.WriteLine("3. Use For Loop to Print Numbers 1 to 5");
+            Console.WriteLine("4. Check if Number is Positive, Negative or Zero");
+
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    PrintHelloCSharp();
+                    break;
+                case "2":
+                    DeclareAndPrintVariables();
+                    break;
+                case "3":
+                    PrintNumbersOneToFive();
+                    break;
+                case "4":
+                    PrintNumbersTwoToFive();
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+            }
+        }
+
+        // Write Main() that prints 'Hello, C#'.
+        public static void PrintHelloCSharp()
+        {
+            Console.WriteLine("Hello, C#"); // Print the message to the console
+        }
+
+        // Declare and print string, int, bool variables.
+        public static void DeclareAndPrintVariables()
+        {
+            string message = "Hello, World!"; // Declare a string variable
+            int number = 42; // Declare an integer variable
+            bool isTrue = true; // Declare a boolean variable
+            // Print the values of the variables
+            Console.WriteLine($"Message: {message}");
+            Console.WriteLine($"Number: {number}");
+            Console.WriteLine($"Is True: {isTrue}");
+        }
+
+        //  Use a for loop to print numbers 1 to 5.
+        public static void PrintNumbersOneToFive()
+        {
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine(i); // Print each number from 1 to 5
+            }
+        }
+
+        //  Check if number is positive, negative or zero using if-else.
+        public static void PrintNumbersTwoToFive()
+        {
+            Console.WriteLine("Enter a number:");
+            int number = int.Parse(Console.ReadLine()); // Read user input
+            if (number > 0)
+            {
+                Console.WriteLine("The number is positive.");
+            }
+            else if (number < 0)
+            {
+                Console.WriteLine("The number is negative.");
+            }
+            else
+            {
+                Console.WriteLine("The number is zero.");
+            }
+        }
+
+        //  Create class Car with Drive() method, call it from Main()
+        public class Car
+        {
+            // Method to simulate driving the car
+            public void Drive()
+            {
+                Console.WriteLine("The car is now driving.");
+            }
+        }
+
 
     }
 
