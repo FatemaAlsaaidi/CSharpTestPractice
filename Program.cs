@@ -966,6 +966,7 @@
             Console.WriteLine("Choose an input/output operation to test:");
             Console.WriteLine("1. Read and Print User Input");
             Console.WriteLine("2. Read Two Numbers AndDisplay Sum");
+            Console.WriteLine("3. Ask for Favorite Color");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -974,6 +975,9 @@
                     break;
                 case "2":
                     ReadTwoNumbersAndDisplaySum();
+                    break;
+                case "3":
+                    AskForFavoriteColor();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -1000,6 +1004,13 @@
             Console.WriteLine($"The sum of {num1} and {num2} is: {sum}"); // Display the sum
         }
 
+        // Ask for favorite color and print using string interpolation.
+        public static void AskForFavoriteColor()
+        {
+            Console.WriteLine("What is your favorite color?");
+            string color = Console.ReadLine(); // Read user input
+            Console.WriteLine($"Your favorite color is {color}."); // Print using string interpolation
+        }
 
     }
 
