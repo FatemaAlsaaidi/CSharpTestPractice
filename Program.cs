@@ -1,6 +1,8 @@
 ﻿namespace CSharpTestPractice
 {
     using System;
+    using System.Windows.Markup;
+
     internal class Program
     {
 
@@ -1048,14 +1050,18 @@
             // Add file handling-related methods here
             Console.WriteLine("Choose a file handling operation to test:");
             Console.WriteLine("1. Write to a File");
-            
+            Console.WriteLine("2. Check if File Exists");
+
             string choice = Console.ReadLine();
             switch (choice)
             {
                 case "1":
                     WriteToFile();
                     break;
-                
+                case "2":
+                    CheckFileExists();
+                    break;
+
                 default:
                     Console.WriteLine("Invalid choice.");
                     break;
@@ -1077,6 +1083,20 @@
             catch (Exception ex)
             {
                 Console.WriteLine($"Error writing to file: {ex.Message}");
+            }
+        }
+
+        // Check if a file exists and print appropriate message.
+        public static void CheckFileExists()
+        {
+            string filePath = "welcome.txt"; // Specify the file path
+            if (System.IO.File.Exists(filePath))
+            {
+                Console.WriteLine($"The file {filePath} exists.");
+            }
+            else
+            {
+                Console.WriteLine($"The file {filePath} does not exist.");
             }
         }
 
