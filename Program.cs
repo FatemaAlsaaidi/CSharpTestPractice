@@ -1051,6 +1051,8 @@
             Console.WriteLine("Choose a file handling operation to test:");
             Console.WriteLine("1. Write to a File");
             Console.WriteLine("2. Check if File Exists");
+            Console.WriteLine("3. Append to Log File");
+            Console.WriteLine("4. Read Notes File");
 
             string choice = Console.ReadLine();
             switch (choice)
@@ -1060,6 +1062,12 @@
                     break;
                 case "2":
                     CheckFileExists();
+                    break;
+                case "3":
+                    AppendToLogFile();
+                    break;
+                case "4":
+                    ReadNotesFile();
                     break;
 
                 default:
@@ -1115,6 +1123,28 @@
             catch (Exception ex)
             {
                 Console.WriteLine($"Error writing to log file: {ex.Message}");
+            }
+        }
+        //  Read and print contents of notes.txt.
+        public static void ReadNotesFile()
+        {
+            string notesFilePath = "notes.txt"; // Specify the notes file path
+            try
+            {
+                if (System.IO.File.Exists(notesFilePath))
+                {
+                    string content = System.IO.File.ReadAllText(notesFilePath); // Read the entire file content
+                    Console.WriteLine("Contents of notes.txt:");
+                    Console.WriteLine(content); // Print the content to the console
+                }
+                else
+                {
+                    Console.WriteLine($"The file {notesFilePath} does not exist.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading notes file: {ex.Message}");
             }
         }
 
