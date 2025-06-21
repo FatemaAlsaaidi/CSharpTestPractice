@@ -968,6 +968,7 @@
             Console.WriteLine("2. Read Two Numbers AndDisplay Sum");
             Console.WriteLine("3. Ask for Favorite Color");
             Console.WriteLine("4. Print Messages on Same Line");
+            Console.WriteLine("5. Read Key and Display");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -982,6 +983,9 @@
                     break;
                 case "4":
                     PrintMessagesOnSameLine();
+                    break;
+                case "5":
+                    ReadKeyAndDisplay();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -1022,6 +1026,14 @@
             Console.Write("Hello, "); // Print first message without a newline
             Console.Write("World!"); // Print second message on the same line
             Console.WriteLine(); // Move to the next line after printing both messages
+        }
+        // Read a key using Console.ReadKey() and display it.
+        public static void ReadKeyAndDisplay()
+        {
+            Console.WriteLine("Press any key to continue...");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(); // Read a key from the console
+            Console.WriteLine(); // Move to the next line
+            Console.WriteLine($"You pressed: {keyInfo.KeyChar}"); // Display the pressed key
         }
 
     }
