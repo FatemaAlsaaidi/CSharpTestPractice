@@ -967,6 +967,7 @@
             Console.WriteLine("1. Read and Print User Input");
             Console.WriteLine("2. Read Two Numbers AndDisplay Sum");
             Console.WriteLine("3. Ask for Favorite Color");
+            Console.WriteLine("4. Print Messages on Same Line");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -978,6 +979,9 @@
                     break;
                 case "3":
                     AskForFavoriteColor();
+                    break;
+                case "4":
+                    PrintMessagesOnSameLine();
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -1010,6 +1014,14 @@
             Console.WriteLine("What is your favorite color?");
             string color = Console.ReadLine(); // Read user input
             Console.WriteLine($"Your favorite color is {color}."); // Print using string interpolation
+        }
+
+        //  Print two messages on the same line using Console.Write().
+        public static void PrintMessagesOnSameLine()
+        {
+            Console.Write("Hello, "); // Print first message without a newline
+            Console.Write("World!"); // Print second message on the same line
+            Console.WriteLine(); // Move to the next line after printing both messages
         }
 
     }
