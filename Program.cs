@@ -1100,6 +1100,24 @@
             }
         }
 
+        //  Append a line to log.txt, create if missing.
+        public static void AppendToLogFile()
+        {
+            string logFilePath = "log.txt"; // Specify the log file path
+            try
+            {
+                using (System.IO.StreamWriter writer = new System.IO.StreamWriter(logFilePath, true)) // Open in append mode
+                {
+                    writer.WriteLine("Log entry at " + DateTime.Now); // Write a log entry with the current timestamp
+                }
+                Console.WriteLine($"Log entry added to {logFilePath} successfully.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error writing to log file: {ex.Message}");
+            }
+        }
+
     }
 
 }
