@@ -15,6 +15,7 @@
             Console.WriteLine("5. Data Types");
             Console.WriteLine("6. Operators");
             Console.WriteLine("7. Access Modifiers");
+            Console.WriteLine("8. Input/Output"); 
 
             string choice = Console.ReadLine();
 
@@ -40,6 +41,9 @@
                     break;
                 case "7":
                     AccessModifiers();
+                    break;
+                case "8":
+                    InputOutput();
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Exiting.");
@@ -953,8 +957,44 @@
         //}
 
 
+        // ======================  Input/Output ========================
+
+        public static void InputOutput()
+        {
+            Console.WriteLine("Hello,In Input/Output Section!");
+            // Add input/output-related methods here
+            Console.WriteLine("Choose an input/output operation to test:");
+            Console.WriteLine("1. Read and Print User Input");
+            Console.WriteLine("2. Write to a File");
+            Console.WriteLine("3. Read from a File");
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    ReadAndPrintUserInput();
+                    break;
+                case "2":
+                    WriteToFile();
+                    break;
+                case "3":
+                    ReadFromFile();
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+            }
+        }
+
+        // Read user name using Console.ReadLine() and greet them.
+        public static void ReadAndPrintUserInput()
+        {
+            Console.WriteLine("Enter your name:");
+            string name = Console.ReadLine(); // Read user input
+            Console.WriteLine($"Hello, {name}!"); // Greet the user
+        }
 
 
-}
+
+    }
 
 }
