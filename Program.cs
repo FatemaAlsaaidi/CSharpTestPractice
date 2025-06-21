@@ -15,7 +15,8 @@
             Console.WriteLine("5. Data Types");
             Console.WriteLine("6. Operators");
             Console.WriteLine("7. Access Modifiers");
-            Console.WriteLine("8. Input/Output"); 
+            Console.WriteLine("8. Input/Output");
+            Console.WriteLine("9. File Handling");
 
             string choice = Console.ReadLine();
 
@@ -45,18 +46,22 @@
                 case "8":
                     InputOutput();
                     break;
+                case "9":
+                    FileHandling();
+                    break;
                 default:
                     Console.WriteLine("Invalid choice. Exiting.");
                     break;
             }
 
-            DerivedClass obj = new DerivedClass();
+            /*DerivedClass obj = new DerivedClass();
             obj.CallProtectedMethod(); // Output: Protected method in BaseClass called.
 
+            //================================
 
             ScopeExample obj = new ScopeExample();
             obj.ShowScope();
-            obj.AnotherMethod();
+            obj.AnotherMethod();*/
 
         }
 
@@ -1034,6 +1039,45 @@
             ConsoleKeyInfo keyInfo = Console.ReadKey(); // Read a key from the console
             Console.WriteLine(); // Move to the next line
             Console.WriteLine($"You pressed: {keyInfo.KeyChar}"); // Display the pressed key
+        }
+
+        // ======================  File Handling =======================
+        public static void FileHandling()
+        {
+            Console.WriteLine("Hello,In File Handling Section!");
+            // Add file handling-related methods here
+            Console.WriteLine("Choose a file handling operation to test:");
+            Console.WriteLine("1. Write to a File");
+            
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    WriteToFile();
+                    break;
+                
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+            }
+        }
+
+        // Create a text file and write a welcome message.
+        public static void WriteToFile()
+        {
+            string filePath = "welcome.txt"; // Specify the file path
+            try
+            {
+                using (System.IO.StreamWriter writer = new System.IO.StreamWriter(filePath))
+                {
+                    writer.WriteLine("Welcome to C# File Handling!"); // Write a welcome message to the file
+                }
+                Console.WriteLine($"Message written to {filePath} successfully.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error writing to file: {ex.Message}");
+            }
         }
 
     }
