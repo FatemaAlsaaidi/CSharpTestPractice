@@ -1148,6 +1148,32 @@
             }
         }
 
+        // Read names from file and print with line numbers.
+        public static void ReadNamesFromFile()
+        {
+            string filePath = "names.txt"; // Specify the file path
+            try
+            {
+                if (System.IO.File.Exists(filePath))
+                {
+                    string[] names = System.IO.File.ReadAllLines(filePath); // Read all lines from the file
+                    Console.WriteLine("Names from the file:");
+                    for (int i = 0; i < names.Length; i++)
+                    {
+                        Console.WriteLine($"{i + 1}. {names[i]}"); // Print each name with its line number
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"The file {filePath} does not exist.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading names file: {ex.Message}");
+            }
+        }
+
     }
 
 }
